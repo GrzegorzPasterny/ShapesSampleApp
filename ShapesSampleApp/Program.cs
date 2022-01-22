@@ -20,6 +20,11 @@ namespace ShapesSampleApp
             Logger logger = (Logger)services.GetRequiredService(typeof(Logger));
 
             logger.Info("Startup completed.");
+
+            FlowActor flowActor = (FlowActor)services.GetRequiredService(typeof(FlowActor));
+
+            flowActor.Execute();
+
         }
 
         private static IServiceProvider getStartupBuilder(string[] args)

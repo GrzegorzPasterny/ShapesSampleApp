@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesSampleApp", "ShapesSa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesSampleAppLibrary", "ShapesSampleAppLibrary\ShapesSampleAppLibrary.csproj", "{821D651D-CAF9-4C61-9009-1ADC64ED65FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesSampleAppTests", "ShapesSampleAppTests\ShapesSampleAppTests.csproj", "{64EE607C-06E5-4D35-857A-A2F156DB987D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{821D651D-CAF9-4C61-9009-1ADC64ED65FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{821D651D-CAF9-4C61-9009-1ADC64ED65FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{821D651D-CAF9-4C61-9009-1ADC64ED65FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64EE607C-06E5-4D35-857A-A2F156DB987D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64EE607C-06E5-4D35-857A-A2F156DB987D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64EE607C-06E5-4D35-857A-A2F156DB987D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64EE607C-06E5-4D35-857A-A2F156DB987D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
