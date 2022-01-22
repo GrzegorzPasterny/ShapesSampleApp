@@ -34,7 +34,7 @@ namespace ShapesSampleApp
                 .AddSingleton(typeof(ShapesHelper))
                 .AddSingleton(typeof(FlowActor))
                 .AddSingleton(typeof(XmlService))
-                .AddSingleton(typeof(TextFileService))
+                //.AddSingleton(typeof(TextFileService))
                 ;
 
             return services.BuildServiceProvider();

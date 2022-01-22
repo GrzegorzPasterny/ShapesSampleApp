@@ -8,13 +8,19 @@ namespace ShapesSampleApp.Models
 {
     public abstract class Shape
     {
-        public double Area { get; }
+        public double Area { get; internal set; }
+        public double Perimeter { get; internal set; }
 
         public Shape()
         {
-            calculateArea();
         }
 
-        internal abstract double calculateArea();
+        internal abstract void calculateArea();
+        internal abstract void calculatePerimeter();
+        internal void calculateProperties()
+        {
+            calculateArea();
+            calculatePerimeter();
+        }
     }
 }

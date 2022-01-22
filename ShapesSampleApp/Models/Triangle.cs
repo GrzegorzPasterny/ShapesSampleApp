@@ -21,7 +21,8 @@ namespace ShapesSampleApp.Models
             set 
             {
                 sideA = value;
-                calculateArea();
+                checkTriangleAssumptions();
+                calculateProperties();
             }
         }
 
@@ -34,7 +35,8 @@ namespace ShapesSampleApp.Models
             set
             {
                 sideB = value;
-                calculateArea();
+                checkTriangleAssumptions();
+                calculateProperties();
             }
         }
 
@@ -47,24 +49,47 @@ namespace ShapesSampleApp.Models
             set
             {
                 sideC = value;
-                calculateArea();
+                checkTriangleAssumptions();
+                calculateProperties();
             }
         }
 
 
         public Triangle(double A, double B, double C) : base()
         {
-            SideA = A;
             sideA = A;
-            SideB = B;
             sideB = B;
-            SideC = C;
             sideC = C;
+            checkTriangleAssumptions();
+            calculateProperties();
         }
 
-        internal override double calculateArea()
+        private void checkTriangleAssumptions()
         {
-            return sideA + sideB + sideC;
+            if  
+            (
+                (sideA + sideB) <= sideC ||
+                (sideB + sideC) <= sideA ||
+                (sideA + sideC) <= sideB
+            ) 
+                throw new GeometryNotPossibleException("One of the sides of triangle is longer than 2 other remaining sides.");
+        }
+
+        internal override void calculateArea()
+        {
+            double p = (sideA + sideB + sideC) / 2;
+
+            Area = Math.Pow(p * (p - sideA) * (p - sideB) * (p - sideC), 0.5);
+        }
+
+        internal override void calculatePerimeter()
+        {
+            Perimeter = sideA + sideB + sideC;
+        }
+
+        public override string ToString()
+        {
+            return $"a = {sideA}, b = {sideB}, c = {sideC}, area = {Area}, perimeter = {Perimeter};";
         }
     }
 }

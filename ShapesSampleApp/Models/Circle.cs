@@ -18,19 +18,29 @@ namespace ShapesSampleApp.Models
             set
             {
                 radius = value;
-                calculateArea();
+                calculateProperties();
             } 
         }
         
         public Circle(double R) : base()
         {
             radius = R;
-            Radius = R;
+            calculateProperties();
         }
         
-        internal override double calculateArea() 
+        internal override void calculateArea() 
         {
-            return 2 * Math.PI * radius;
+            Area = Math.PI * Math.Pow(radius, 2);
+        }
+
+        internal override void calculatePerimeter()
+        {
+            Perimeter = 2 * Math.PI * radius;
+        }
+
+        public override string ToString()
+        {
+            return $"r = {radius}, area = {Area}, perimeter = {Perimeter};";
         }
     }
 }

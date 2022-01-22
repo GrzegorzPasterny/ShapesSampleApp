@@ -20,7 +20,7 @@ namespace ShapesSampleApp.Models
             set
             {
                 sideA = value;
-                calculateArea();
+                calculateProperties();
             } 
         }
         public double SideB
@@ -32,21 +32,30 @@ namespace ShapesSampleApp.Models
             set
             {
                 sideB = value;
-                calculateArea();
+                calculateProperties();
             }
         }
 
         public Rectangle(double A, double B) : base()
         {
-            SideA = A;
             sideA = A;
-            SideB = B;
             sideB = B;
+            calculateProperties();
         }
 
-        internal override double calculateArea()
+        internal override void calculateArea()
         {
-            return sideA + sideB;
+            Area = sideA * sideB;
+        }
+
+        internal override void calculatePerimeter()
+        {
+            Perimeter = 2 * (sideA + sideB);
+        }
+
+        public override string ToString()
+        {
+            return $"a = {sideA}, b = {sideB}, area = {Area}, perimeter = {Perimeter};";
         }
     }
 }

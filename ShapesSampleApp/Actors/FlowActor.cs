@@ -1,6 +1,7 @@
 ﻿using ShapesSampleApp.Services;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,10 +19,12 @@ namespace ShapesSampleApp.Actors
 
         internal void Execute()
         {
-            var input = xmlService.ParseShapes();
+            var shapes = xmlService.ParseShapes();
 
-            var list = input.ToList();
+            //IEnumerable<string> 
+            var shapesResult = shapes.GroupBy(s => s.GetType().ToString());//.Select(s => s.ToString()).ToList();
 
+            TextFileService.WriteToFile(shapesResult, ConfigurationManager.AppSettings["outputFileName"]);
         }
     }
 }
