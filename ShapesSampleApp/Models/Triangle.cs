@@ -21,7 +21,7 @@ namespace ShapesSampleApp.Models
             set 
             {
                 sideA = value;
-                checkTriangleAssumptions();
+                checkGeometryTypeAssumptions();
                 calculateProperties();
             }
         }
@@ -35,7 +35,7 @@ namespace ShapesSampleApp.Models
             set
             {
                 sideB = value;
-                checkTriangleAssumptions();
+                checkGeometryTypeAssumptions();
                 calculateProperties();
             }
         }
@@ -49,7 +49,7 @@ namespace ShapesSampleApp.Models
             set
             {
                 sideC = value;
-                checkTriangleAssumptions();
+                checkGeometryTypeAssumptions();
                 calculateProperties();
             }
         }
@@ -60,11 +60,11 @@ namespace ShapesSampleApp.Models
             sideA = A;
             sideB = B;
             sideC = C;
-            checkTriangleAssumptions();
+            checkGeometryTypeAssumptions();
             calculateProperties();
         }
 
-        private void checkTriangleAssumptions()
+        internal override void checkGeometryTypeAssumptions()
         {
             if  
             (
@@ -73,6 +73,11 @@ namespace ShapesSampleApp.Models
                 (sideA + sideC) <= sideB
             ) 
                 throw new GeometryNotPossibleException("One of the sides of triangle is longer than 2 other remaining sides.");
+
+            if (sideA <= 0 || sideB <= 0 || sideC <= 0)
+            {
+                throw new GeometryNotPossibleException("Neither of the triangle sides can be equal or less than zero.");
+            }
         }
 
         internal override void calculateArea()

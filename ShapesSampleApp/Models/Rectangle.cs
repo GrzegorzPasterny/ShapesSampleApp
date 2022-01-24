@@ -57,5 +57,13 @@ namespace ShapesSampleApp.Models
         {
             return $"a = {sideA}, b = {sideB}, area = {Area}, perimeter = {Perimeter};";
         }
+
+        internal override void checkGeometryTypeAssumptions()
+        {
+            if (sideA <= 0 || sideB <= 0)
+            {
+                throw new GeometryNotPossibleException("Neither of the rectangle sides can be equal or less than zero.");
+            }
+        }
     }
 }

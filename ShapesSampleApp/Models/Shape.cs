@@ -11,14 +11,12 @@ namespace ShapesSampleApp.Models
         public double Area { get; internal set; }
         public double Perimeter { get; internal set; }
 
-        public Shape()
-        {
-        }
-
         internal abstract void calculateArea();
         internal abstract void calculatePerimeter();
+        internal abstract void checkGeometryTypeAssumptions();
         internal void calculateProperties()
         {
+            checkGeometryTypeAssumptions();
             calculateArea();
             calculatePerimeter();
         }

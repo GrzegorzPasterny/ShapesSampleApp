@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using NLog;
 using ShapesSampleApp.Actors;
+using ShapesSampleApp.Models;
 using ShapesSampleApp.Services;
 using ShapesSampleAppLibrary;
 using System;
@@ -11,6 +12,13 @@ using System.Threading.Tasks;
 
 namespace ShapesSampleApp
 {
+    // Points to be improved:
+    // - more procese logging and handling of exceptions
+    // - abstractions for the input and output services can be added, but for now other implementations are not forseen
+    // - extract part of the code to library project
+    // - add couple of more tests. Think if it is needed.
+    // - think how to add more info via logger to Console, if this will not impact performance. To be tested...
+
     class Program
     {
         static void Main(string[] args)
@@ -18,13 +26,13 @@ namespace ShapesSampleApp
             IServiceProvider services = getStartupBuilder(args);
 
             Logger logger = (Logger)services.GetRequiredService(typeof(Logger));
-
+            FlowActor flowActor = (FlowActor)services.GetRequiredService(typeof(FlowActor));
+            
             logger.Info("Startup completed.");
 
-            FlowActor flowActor = (FlowActor)services.GetRequiredService(typeof(FlowActor));
-
-            flowActor.Execute();
-
+            logger.Info("Starting execution...");
+            flowActor.ProcessShapesXmlToTextFile();
+            logger.Info("Flow has ended. Exiting the program...");
         }
 
         private static IServiceProvider getStartupBuilder(string[] args)
@@ -34,7 +42,7 @@ namespace ShapesSampleApp
                 .AddSingleton(typeof(ShapesHelper))
                 .AddSingleton(typeof(FlowActor))
                 .AddSingleton(typeof(XmlService))
-                //.AddSingleton(typeof(TextFileService))
+                .AddSingleton(typeof(Settings))
                 ;
 
             return services.BuildServiceProvider();

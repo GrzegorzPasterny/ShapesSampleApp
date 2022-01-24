@@ -22,7 +22,7 @@ namespace ShapesSampleApp.Models
             } 
         }
         
-        public Circle(double R) : base()
+        public Circle(double R)
         {
             radius = R;
             calculateProperties();
@@ -41,6 +41,14 @@ namespace ShapesSampleApp.Models
         public override string ToString()
         {
             return $"r = {radius}, area = {Area}, perimeter = {Perimeter};";
+        }
+
+        internal override void checkGeometryTypeAssumptions()
+        {
+            if (radius <= 0)
+            {
+                throw new GeometryNotPossibleException("Radius of a circle cannot be equal or less than zero.");
+            }
         }
     }
 }

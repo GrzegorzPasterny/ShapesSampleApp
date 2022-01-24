@@ -70,6 +70,7 @@
     <Compile Include="Models\Circle.cs" />
     <Compile Include="Models\Exceptions\GeometryNotPossibleException.cs" />
     <Compile Include="Models\Rectangle.cs" />
+    <Compile Include="Models\Settings.cs" />
     <Compile Include="Models\Shape.cs" />
     <Compile Include="Models\Triangle.cs" />
     <Compile Include="Program.cs" />

@@ -47,7 +47,7 @@ namespace ShapesSampleApp.Services
                             xElement.Elements().ElementAt(3).Value
                             ));
                 default:
-                    throw new Exception();
+                    throw new Exception("Invalid type was provided by input xml file.");
             }
         }
     }
