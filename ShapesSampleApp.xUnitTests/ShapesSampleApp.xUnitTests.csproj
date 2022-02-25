@@ -79,10 +79,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comparers\ShapeComparer.cs" />
+    <Compile Include="Data\ShapesAndExpectedOutputFilePath.cs" />
     <Compile Include="Data\XmlPathAndExpectedShapesOutOfIt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShapesCalculation.cs" />
     <Compile Include="ShapesLoading.cs" />
+    <Compile Include="TextFileServicesTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShapesSampleApp\ShapesSampleApp.csproj">
@@ -101,6 +103,9 @@
     <Analyzer Include="..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Files\Expected1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Files\Shapes1.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -1,0 +1,9 @@
+﻿ShapesSampleApp.Models.Circle
+1
+r = 5.5, area = 95.0331777710912, perimeter = 34.5575191894877;
+ShapesSampleApp.Models.Rectangle
+1
+a = 23, b = 4.4, area = 101.2, perimeter = 54.8;
+ShapesSampleApp.Models.Triangle
+1
+a = 4, b = 32, c = 30, area = 53.5817132984753, perimeter = 66;

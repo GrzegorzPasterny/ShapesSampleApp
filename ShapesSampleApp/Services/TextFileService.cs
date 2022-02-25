@@ -15,7 +15,7 @@ namespace ShapesSampleApp.Services
         /// </summary>
         /// <param name="shapesResult"></param>
         /// <param name="name"></param>
-        internal static void WriteToFile(IEnumerable<IGrouping<string, Shape>> shapesResult, string name)
+        public static void WriteToFile(IEnumerable<IGrouping<string, Shape>> shapesResult, string name)
         {
             using (StreamWriter streamWriter = new StreamWriter(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, name)))
             {
