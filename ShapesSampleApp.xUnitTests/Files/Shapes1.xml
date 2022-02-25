@@ -1,0 +1,18 @@
+﻿<shapes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="Exercise.xsd">
+  <shape>
+    <type>Circle</type>
+    <a>5.5</a>
+  </shape>
+  <shape>
+    <type>Rectangle</type>
+    <a>23</a>
+    <b>4.4</b>
+  </shape>
+  <shape>
+    <type>Triangle</type>
+    <a>4</a>
+    <b>32</b>
+    <c>30</c>
+  </shape>
+</shapes>

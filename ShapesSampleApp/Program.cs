@@ -19,7 +19,7 @@ namespace ShapesSampleApp
     // - add couple of more tests. Think if it is needed.
     // - think how to add more info via logger to Console, if this will not impact performance. To be tested...
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -48,7 +48,7 @@ namespace ShapesSampleApp
             return services.BuildServiceProvider();
         }
 
-        private static Logger configureLogger()
+        public static Logger configureLogger()
         {
             var config = new NLog.Config.LoggingConfiguration();
 

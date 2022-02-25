@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesSampleAppLibrary", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesSampleAppTests", "ShapesSampleAppTests\ShapesSampleAppTests.csproj", "{64EE607C-06E5-4D35-857A-A2F156DB987D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesSampleApp.xUnitTests", "ShapesSampleApp.xUnitTests\ShapesSampleApp.xUnitTests.csproj", "{7F34EFF1-E66C-4742-A65F-DD3325C3D33E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{64EE607C-06E5-4D35-857A-A2F156DB987D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64EE607C-06E5-4D35-857A-A2F156DB987D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64EE607C-06E5-4D35-857A-A2F156DB987D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F34EFF1-E66C-4742-A65F-DD3325C3D33E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F34EFF1-E66C-4742-A65F-DD3325C3D33E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F34EFF1-E66C-4742-A65F-DD3325C3D33E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F34EFF1-E66C-4742-A65F-DD3325C3D33E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
